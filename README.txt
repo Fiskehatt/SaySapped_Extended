@@ -18,4 +18,4 @@ Currently works for the following CCs:
     Silence (Mage, Priest)
     Seduce
     
-Rename the folder to SaySapped after extracting it!
+Rename the folder "SaySapped" after extracting it!
