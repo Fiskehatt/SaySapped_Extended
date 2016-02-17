@@ -1,0 +1,328 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd" xmlns="http://www.blizzard.com/wow/ui/">
+    <Script file="SaySapped.lua" />
+    <CheckButton name="SaySappedCheckButtonTemplate" virtual="true" inherits="UICheckButtonTemplate">
+        <HitRectInsets>
+            <AbsInset left="0" right="-100" top="0" bottom="0" />
+        </HitRectInsets>
+        <Scripts>
+            <OnClick>
+                SaySapped_CheckButton_OnClick();
+            </OnClick>
+            <OnShow>
+                SaySapped_ButtonInitialize()
+            </OnShow>
+        </Scripts>
+    </CheckButton>
+    <Frame name="SaySapped" parent="UIParent" enableMouse="true" movable="true" hidden="true">
+        <Size>
+            <AbsDimension x="200" y="310" />
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER" />
+        </Anchors>
+        <Backdrop name="RSAMenuFrameBackdrop" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="4" right="4" top="4" bottom="4" />
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="16" />
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="16" />
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="BORDER">
+                <FontString name="$parentHeader" inherits="SystemFont" text="SaySapped">
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-5" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+			<Frame name="$parentDescription">
+				<Size x="100" y="50" />
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-18" />
+						</Offset>
+					</Anchor>
+				</Anchors>				
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentText2" inherits="SystemFont" font="Fonts\FRIZQT__.TTF" text="Says the name of the CC in order to notify other players about it." justifyH="LEFT" nonspacewrap="true" spacing="0" maxlines="10">
+							<Size x="180" y="200" />
+							    <FontHeight>
+									<AbsValue val="10"/>
+								</FontHeight>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+            <Button name="$parentButtonClose" inherits="UIPanelCloseButton">
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="2" y="1" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <CheckButton name="$parentButton1" inherits="SaySappedCheckButtonTemplate" text="Sap">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-65" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentText1" inherits="SystemFont" text="Sap" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton2" inherits="SaySappedCheckButtonTemplate" text="Fear">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-90" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Fear" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton3" inherits="SaySappedCheckButtonTemplate" text="Freezing Trap">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-115" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Freezing Trap" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton4" inherits="SaySappedCheckButtonTemplate" text="Blind">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-140" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Blind" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton5" inherits="SaySappedCheckButtonTemplate" text="Reckless Charge">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-165" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Reckless Charge" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton6" inherits="SaySappedCheckButtonTemplate" text="Silence">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-190" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Silence" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton7" inherits="SaySappedCheckButtonTemplate" text="Polymorph">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-215" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Polymorph" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton8" inherits="SaySappedCheckButtonTemplate" text="Hibernate">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-240" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Hibernate" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>
+            <CheckButton name="$parentButton9" inherits="SaySappedCheckButtonTemplate" text="Seduce">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-265" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Seduce" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>			
+			<Frame name="$parentAuthor">
+				<Size x="100" y="50" />
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="-5" y="-10" />
+						</Offset>
+					</Anchor>
+				</Anchors>				
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentText2" inherits="SystemFont" font="Fonts\FRIZQT__.TTF" text="Author: Coax" justifyH="RIGHT" nonspacewrap="true" spacing="0" maxlines="10">
+							<Size x="200" y="50" />		
+								<Anchors>
+									<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+										<Offset>
+											<AbsDimension x="-3" y="0" />
+										</Offset>
+								</Anchor>
+								</Anchors>							
+							    <FontHeight>
+									<AbsValue val="10"/>
+								</FontHeight>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+        </Frames>
+        <Scripts>
+            <OnDragStart>
+			SaySapped:StartMoving();
+			</OnDragStart>
+            <OnDragStop>
+			SaySapped:StopMovingOrSizing();
+			</OnDragStop>
+            <OnLoad>
+            SaySapped:RegisterForDrag("LeftButton")
+			SaySapped_OnLoad()
+            </OnLoad>
+            <OnEvent>
+            SaySapped_OnEvent(event)
+            </OnEvent>
+        </Scripts>
+    </Frame>
+</Ui>
