@@ -23,44 +23,47 @@ end
 -- Extract the spell name and check if it contains the name of a cc.
 -- If found and the reporting of that cc is enabled, report in chat frame and say.
 function SaySapped_FilterDebuffs(msg)
-	local t = stringToTable(msg)
-	local spell = t[5]
-	local i = 6
-	while t[i] do
-		spell = spell..t[i]
-		i = i + 1
-	end
-	if string.find(spell, "Sap") and SaySappedConfig["Sap"] then
-		SendChatMessage("Sapped!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Sapped!")
-	elseif string.find(spell, "FreezingTrap") and SaySappedConfig["Freezing Trap"] then
-		SendChatMessage("Trapped!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Trapped!")
-	elseif string.find(spell, "Blind") and SaySappedConfig["Blind"] then
-		SendChatMessage("Blinded!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Blinded!")	
-	elseif string.find(spell, "Polymorph") and SaySappedConfig["Polymorph"] then
-		SendChatMessage("Polymorphed!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Polymorphed!")
-	elseif ( string.find(spell, "Fear") or string.find(spell, "IntimidatingShout") or string.find(spell, "PsychicScream") ) and SaySappedConfig["Fear"] then
-		SendChatMessage("Feared!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Feared")
-	elseif string.find(spell, "Hibernate") and SaySappedConfig["Hibernate"] then
-		SendChatMessage("Hibernated!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Hibernated!")
-	elseif string.find(spell, "RecklessCharge") and SaySappedConfig["Reckless Charge"] then
-		SendChatMessage("Reckless Charged!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Reckless Charged!")
-	elseif string.find(spell, "Silence") and SaySappedConfig["Silence"] then
-		SendChatMessage("Silenced!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Silenced!")
-	elseif string.find(spell, "Seduce") and SaySappedConfig["Seduce"] then
-		SendChatMessage("Seduced!","SAY")
-		DEFAULT_CHAT_FRAME:AddMessage("Seduced!")			
+		local t = stringToTable(msg)
+		local spell = t[5]
+		local i = 6
+		while t[i] do
+			spell = spell..t[i]
+			i = i + 1
+		end
+		if string.find(spell, "Sap") and SaySappedConfig["Sap"] then
+			SendChatMessage("Sapped!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Sapped!")
+		elseif string.find(spell, "FreezingTrap") and SaySappedConfig["Freezing Trap"] then
+			SendChatMessage("Trapped!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Trapped!")
+		elseif string.find(spell, "Blind") and SaySappedConfig["Blind"] then
+			SendChatMessage("Blinded!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Blinded!")	
+		elseif string.find(spell, "Polymorph") and SaySappedConfig["Polymorph"] then
+			SendChatMessage("Polymorphed!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Polymorphed!")
+		elseif ( string.find(spell, "Fear") or string.find(spell, "IntimidatingShout") or string.find(spell, "PsychicScream") ) and SaySappedConfig["Fear"] then
+			SendChatMessage("Feared!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Feared")
+		elseif string.find(spell, "Hibernate") and SaySappedConfig["Hibernate"] then
+			SendChatMessage("Hibernated!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Hibernated!")
+		elseif string.find(spell, "RecklessCharge") and SaySappedConfig["Reckless Charge"] then
+			SendChatMessage("Reckless Charged!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Reckless Charged!")
+		elseif string.find(spell, "Silence") and SaySappedConfig["Silence"] then
+			SendChatMessage("Silenced!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Silenced!")
+		elseif string.find(spell, "Seduce") and SaySappedConfig["Seduce"] then
+			SendChatMessage("Seduced!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Seduced!")	
+		elseif string.find(spell, "CheapShot") and SaySappedConfig["CheapShot"] then
+			SendChatMessage("Rogue on me!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Rogue on you!")	
 	--elseif string.find(spell, "Hamstring") and SaySappedConfig["Hamstring"] then -- for testing
 		--SendChatMessage("Hamstring","SAY")
 		--DEFAULT_CHAT_FRAME:AddMessage("Hamstring")	
-	end
+		end
 end
 
 -- Check if the player is entering the world and create the config file if it is not yet created.
@@ -79,6 +82,7 @@ function SaySapped_OnEvent(event)
 				["Polymorph"] = false,
 				["Hibernate"] = false,
 				["Seduce"] = false,
+				["Cheap Shot"] = false
 --				["Hamstring"] = false  -- for testing
 			}
 		end
