@@ -57,7 +57,7 @@ function SaySapped_FilterDebuffs(msg)
 		elseif string.find(spell, "Seduce") and SaySappedConfig["Seduce"] then
 			SendChatMessage("Seduced!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Seduced!")	
-		elseif string.find(spell, "CheapShot") and SaySappedConfig["CheapShot"] then
+		elseif string.find(spell, "CheapShot") and SaySappedConfig["Cheap Shot"] then
 			SendChatMessage("Rogue on me!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Rogue on you!")	
 	--elseif string.find(spell, "Hamstring") and SaySappedConfig["Hamstring"] then -- for testing
