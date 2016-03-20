@@ -15,7 +15,7 @@
     </CheckButton>
     <Frame name="SaySapped" parent="UIParent" enableMouse="true" movable="true" hidden="true">
         <Size>
-            <AbsDimension x="200" y="310" />
+            <AbsDimension x="200" y="325" />
         </Size>
         <Anchors>
             <Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER" />
@@ -280,7 +280,30 @@
                         </FontString>
                     </Layer>
                 </Layers>
-            </CheckButton>			
+            </CheckButton>
+            <CheckButton name="$parentButton9" inherits="SaySappedCheckButtonTemplate" text="Cheap Shot">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-290" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer name="test">
+                        <FontString name="$parentText1" inherits="SystemFont" text="Cheap Shot" justifyH="LEFT">
+                            <Size x="200" y="50" />
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="200" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </CheckButton>					
 			<Frame name="$parentAuthor">
 				<Size x="100" y="50" />
 				<Anchors>
