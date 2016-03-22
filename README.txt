@@ -17,5 +17,6 @@ Currently works for the following CCs:
     Reckless Charge
     Silence (Mage, Priest)
     Seduce
+    Rogue alert, a rogue cheap shots or kidney shots you
     
 Rename the folder "SaySapped" after extracting it!
