@@ -10,6 +10,11 @@
  version 1.0: release
 --]]
 
+local SaySapped_timer = 0;
+local measureTime = false;
+local SaySapped_UpdateInterval = 5.0; -- How often the OnUpdate code will run (in seconds)
+local Sapped_TimeSinceLastUpdate = 0;
+
 -- Turn the message into a table.
 local function stringToTable(str)
 	str = string.sub(str, 1, string.len(str) - 1)
@@ -19,6 +24,24 @@ local function stringToTable(str)
 	end
 	return args
 end
+
+local function SaySapped_OnUpdate(self, elapsed)
+	local time = GetTime()
+  if (Sapped_TimeSinceLastUpdate < time) then
+		if (SaySapped_timer < 2) then 
+			--DEFAULT_CHAT_FRAME:AddMessage(SaySapped_timer)
+			SaySapped_timer = SaySapped_timer + 1
+		else
+			SaySapped_timer = 0
+			measureTime = false
+			--DEFAULT_CHAT_FRAME:AddMessage("reset")
+		end
+		Sapped_TimeSinceLastUpdate = time + SaySapped_UpdateInterval
+  end
+end
+
+local f = CreateFrame("frame")
+f:SetScript("OnUpdate", SaySapped_OnUpdate)
 
 -- Extract the spell name and check if it contains the name of a cc.
 -- If found and the reporting of that cc is enabled, report in chat frame and say.
@@ -57,11 +80,15 @@ function SaySapped_FilterDebuffs(msg)
 		elseif string.find(spell, "Seduce") and SaySappedConfig["Seduce"] then
 			SendChatMessage("Seduced!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Seduced!")	
-		elseif string.find(spell, "CheapShot") and SaySappedConfig["Cheap Shot"] then
+		elseif (string.find(spell, "CheapShot") or string.find(spell, "KidneyShot")) and SaySappedConfig["Rogue on me"] and not measureTime then
 			SendChatMessage("Rogue on me!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Rogue on you!")	
-	--elseif string.find(spell, "Hamstring") and SaySappedConfig["Hamstring"] then -- for testing
-		--SendChatMessage("Hamstring","SAY")
+			measureTime = true
+			SaySapped_timer = 0
+		--elseif (string.find(spell, "Hamstring") or string.find(spell, "Frostbolt")) and not measureTime then -- for testing
+		--	DEFAULT_CHAT_FRAME:AddMessage("Hamstring!")	
+		--	measureTime = true
+		--	SaySapped_timer = 0
 		--DEFAULT_CHAT_FRAME:AddMessage("Hamstring")	
 		end
 end
@@ -82,7 +109,7 @@ function SaySapped_OnEvent(event)
 				["Polymorph"] = false,
 				["Hibernate"] = false,
 				["Seduce"] = false,
-				["Cheap Shot"] = false
+				["Rogue on me"] = false
 --				["Hamstring"] = false  -- for testing
 			}
 		end
@@ -136,6 +163,5 @@ function SaySapped_OnLoad()
 	SaySapped:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE")
 	DEFAULT_CHAT_FRAME:AddMessage("SaySapped loaded, type /saysapped for options.")
 end
-
 
 
