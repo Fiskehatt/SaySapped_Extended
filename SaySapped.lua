@@ -6,7 +6,8 @@
 	Original idea: Bitbyte of Icecrown
 --]]
 
---[[
+--[[	
+ version 1.1: Rogue on me option and 10 sec cd for it.
  version 1.0: release
 --]]
 
