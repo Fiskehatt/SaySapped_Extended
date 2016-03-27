@@ -77,6 +77,9 @@ function SaySapped_FilterDebuffs(msg)
 		elseif string.find(spell, "Silence") and SaySappedConfig["Silence"] then
 			SendChatMessage("Silenced!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Silenced!")
+		elseif string.find(spell, "MindControl") and SaySappedConfig["Mind Control"] then
+			SendChatMessage("Mindcontrolled!","SAY")
+			DEFAULT_CHAT_FRAME:AddMessage("Mindcontrolled!")
 		elseif string.find(spell, "Seduce") and SaySappedConfig["Seduce"] then
 			SendChatMessage("Seduced!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Seduced!")	
@@ -109,7 +112,8 @@ function SaySapped_OnEvent(event)
 				["Polymorph"] = false,
 				["Hibernate"] = false,
 				["Seduce"] = false,
-				["Rogue on me"] = false
+				["Rogue on me"] = false,
+				["Mind Control"] = true
 --				["Hamstring"] = false  -- for testing
 			}
 		end
