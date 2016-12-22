@@ -19,6 +19,6 @@ Currently works for the following CCs:
     Silence (Mage, Priest)
     Seduce
     Rogue alert, a rogue cheap shots or kidney shots you
-	Mind Control
+    Mind Control
     
 Rename the folder "SaySapped" after extracting it!
