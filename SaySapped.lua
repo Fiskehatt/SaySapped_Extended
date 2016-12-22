@@ -77,6 +77,7 @@ function SaySapped_FilterDebuffs(spell)
 		elseif (string.find(spell, " Hamstring.") or string.find(spell, " Frostbolt.")) then -- for testing
 			--DEFAULT_CHAT_FRAME:AddMessage("Hamstring!")	
 			--measureTime = true
+			--SaySapped_timer = 0
 		end
 end
 
