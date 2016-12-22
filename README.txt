@@ -9,7 +9,7 @@ Original idea: Bitbyte - Icecrown
 
 Currently works for the following CCs:
 
-   Sap
+    Sap
     Fear (Fear, Psychic Scream, Intimidating Shout)
     Polymorph
     Hibernate
