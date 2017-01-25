@@ -6,19 +6,5 @@ Type "/saysapped" for options in game.
 
 Author: Coax - Nostalrius PvP
 Original idea: Bitbyte - Icecrown
-
-Currently works for the following CCs:
-
-    Sap
-    Fear (Fear, Psychic Scream, Intimidating Shout)
-    Polymorph
-    Hibernate
-    Freezing Trap
-    Reckless Charge
-    Blind
-    Silence (Mage, Priest)
-    Seduce
-    Rogue alert, a rogue cheap shots or kidney shots you
-    Mind Control
     
-Rename the folder "SaySapped" after extracting it!
+Rename the addon folder "SaySapped" after extracting it!
