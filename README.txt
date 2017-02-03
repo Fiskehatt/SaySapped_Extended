@@ -11,4 +11,4 @@ Rename the addon folder "SaySapped" after extracting it!
 
 If you want a simple version that just alerts for Sap, look at: https://github.com/Fiskehatt/SaySapped
 
-NOTE: A complete rewrite off this addon is on the way.
+NOTE: A complete rewrite of this addon is on the way.
