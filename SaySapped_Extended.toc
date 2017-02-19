@@ -1,7 +1,7 @@
 ## Interface: 11200
-## Title: SaySapped
+## Title: SaySapped_Extended
 ## Version: 1.1 - 2016-12-22
-## Notes: Says "Sapped!" to alert those around you whenever a rogue saps you. Works also for many other CCs.
+## Notes: Says "Sapped!" to alert those around you whenever a rogue saps you. Also works for many other CCs.
 ## Author: Coax - Nostalrius PvP, Original idea: Bitbyte of Icecrown
 ## SavedVariablesPerCharacter: SaySappedConfig
 

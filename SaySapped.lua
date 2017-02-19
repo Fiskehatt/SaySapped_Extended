@@ -98,7 +98,7 @@ function SaySapped_OnEvent(event)
 				["Hibernate"] = false,
 				["Seduce"] = false,
 				["Rogue on me"] = false,
-				["Mind Control"] = true
+				["Mind Control"] = false
 --				["Hamstring"] = false  -- for testing
 			}
 		end
