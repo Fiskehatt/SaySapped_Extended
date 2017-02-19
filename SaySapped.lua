@@ -48,19 +48,19 @@ function SaySapped_FilterDebuffs(spell)
 		elseif string.find(spell, " Blind.") and SaySappedConfig["Blind"] then
 			SendChatMessage("Blinded!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Blinded!")	
-		elseif string.find(spell, " Polymorph.") and SaySappedConfig["Polymorph"] then
+		elseif string.find(spell, "Polymorph") and SaySappedConfig["Polymorph"] then
 			SendChatMessage("Polymorphed!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Polymorphed!")
-		elseif ( string.find(spell, " Fear.") or string.find(spell, " Intimidating Shout.") or string.find(spell, " Psychic Scream.") ) and SaySappedConfig["Fear"] then
+		elseif ( string.find(spell, "Fear") or string.find(spell, " Intimidating Shout.") or string.find(spell, " Psychic Scream.") ) and SaySappedConfig["Fear"] then
 			SendChatMessage("Feared!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Feared")
-		elseif string.find(spell, " Hibernate.") and SaySappedConfig["Hibernate"] then
+		elseif ( string.find(spell, " Hibernate.") or string.find(spell, " Sleep.") or string.find(spell, " Wyvern Sting.") ) and SaySappedConfig["Hibernate"] then
 			SendChatMessage("Hibernated!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Hibernated!")
 		elseif string.find(spell, " Reckless Charge.") and SaySappedConfig["Reckless Charge"] then
 			SendChatMessage("Reckless Charged!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Reckless Charged!")
-		elseif ( string.find(spell, " Silence.") or string.find(spell, " interrupts your ") ) and SaySappedConfig["Silence"] then
+		elseif string.find(spell, "Silence") and SaySappedConfig["Silence"] then
 			SendChatMessage("Silenced!","SAY")
 			DEFAULT_CHAT_FRAME:AddMessage("Silenced!")
 		elseif string.find(spell, " Mind Control.") and SaySappedConfig["Mind Control"] then
@@ -74,7 +74,7 @@ function SaySapped_FilterDebuffs(spell)
 			DEFAULT_CHAT_FRAME:AddMessage("Rogue on you!")	
 			measureTime = true
 			SaySapped_timer = 0
-		elseif (string.find(spell, " Hamstring.") or string.find(spell, " Frostbolt.")) then -- for testing
+		-- elseif (string.find(spell, " Hamstring.") or string.find(spell, " Frostbolt.")) then -- for testing
 			--DEFAULT_CHAT_FRAME:AddMessage("Hamstring!")	
 			--measureTime = true
 			--SaySapped_timer = 0
